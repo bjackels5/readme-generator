@@ -26,7 +26,20 @@ const questions = [
             if (titleInput) {
                 return true;
             } else {
-                console.log('Please enter the title of your project.');
+                console.log('A project title is required.');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Please provide a description of your project: (Required)',
+        validate: descInput => {
+            if (descInput) {
+                return true;
+            } else {
+                console.log('A project description is required.');
                 return false;
             }
         }
@@ -69,8 +82,7 @@ function init() {
     })
     .catch(err => {
         console.log(err);
-    })
-;
+    });
 }
 
 // Function call to initialize app
