@@ -36,9 +36,24 @@ const questions = [
 const promptProject = () => inquirer.prompt(questions);
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    console.log("going to create the file ", fileName, " with data:\n", data);
-}
+const writeToFile = (fileName, data) => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(fileName, data, err => {
+            // if there's an error, reject the Promise and send the error to the Promise's .catch() method
+            if (err) {
+                reject(err);
+                // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+                return;
+            }
+
+            // if everything went well, resolve the Promise an send the successful data to the .then() method
+            resolve({
+                ok: true,
+                message: 'File Created!'
+            });
+        });
+    });
+};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -50,7 +65,7 @@ function init() {
         return writeToFile("./dist/README.md", readmeMD);
     })
     .then(writeFileResponse => {
-        console.log(writeFileResponse);
+        console.log(writeFileResponse.message);
     })
     .catch(err => {
         console.log(err);
