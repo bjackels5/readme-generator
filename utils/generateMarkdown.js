@@ -35,11 +35,13 @@ function generateMarkdown(data) {
 
 <a id="installation"></a>
 ## Installation Instructions
+${data.installation}
 
 ---
 
 <a id="usage"></a>
 ## Usage Information
+${data.usage}
 
 ---
 
@@ -51,18 +53,26 @@ function generateMarkdown(data) {
 
 <a id="contributing"></a>
 ## Contribution Guidelines
+${data.contributing}
 
 ---
 
 <a id="testing"></a>
 ## Test Instructions
+${data.testing}
 
 ---
 
 <a id="contact"></a>
 ## Contact Me with Questions
+If you have any questions, you can contact me on GitHub:
+
+[${data.ghUserName}](${data.ghLink})
+
+Or you can reach me directly at ${data.emailAddress}.
 
 `;
 }
+
 
 module.exports = generateMarkdown;

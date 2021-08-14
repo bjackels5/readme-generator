@@ -3,46 +3,74 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+const validateInput = (str, message) => {
+    if (str) {
+        return true;
+    } else {
+        console.log(message);
+        return false;
+    }
+
+}
+
 // TODO: Create an array of questions for user input
 const questions = [
     /*
-    project title
-    Description
-    Table of Contents
-    Installation - installation instructions
-    Usage - usage information
     License
-    Contributing - contribution guidelines
-    Tests - test instructions
-    Questions - contact me with questions:
-        GitHub user name and link to GitHub profile
-        email address
     */
     {
         type: 'input',
         name: 'title',
         message: 'What is the title of your project? (Required)',
-        validate: titleInput => {
-            if (titleInput) {
-                return true;
-            } else {
-                console.log('A project title is required.');
-                return false;
-            }
-        }
+        validate: theInput => validateInput(theInput, "A project title is required.")
     },
     {
         type: 'input',
         name: 'description',
         message: 'Please provide a description of your project: (Required)',
-        validate: descInput => {
-            if (descInput) {
-                return true;
-            } else {
-                console.log('A project description is required.');
-                return false;
-            }
-        }
+        validate: theInput => validateInput(theInput, "A project description is required.")
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Please provide installation instructions: (Required)',
+        validate: theInput => validateInput(theInput, "Installation instructions are required.")
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please provide usage information: (Required)',
+        validate: theInput => validateInput(theInput, "Installation instructions are required.")
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Please provide instructions for contributing to the project: (Required)',
+        validate: theInput => validateInput(theInput, "Contribution instructions are required.")
+    },
+    {
+        type: 'input',
+        name: 'testing',
+        message: 'Please provide test instructions: (Required)',
+        validate: theInput => validateInput(theInput, "Test instructions are required.")
+    },
+    {
+        type: 'input',
+        name: 'ghUserName',
+        message: 'What is your GitHub user name? (Required)',
+        validate: theInput => validateInput(theInput, "Your GitHub user name is required.")
+    },
+    {
+        type: 'input',
+        name: 'ghLink',
+        message: 'Provide the link to your GitHub user profile: (Required)',
+        validate: theInput => validateInput(theInput, "The link to your GitHub profile is required.")
+    },
+    {
+        type: 'input',
+        name: 'emailAddress',
+        message: 'What is your email address? (Required)',
+        validate: theInput => validateInput(theInput, "Your email address is required.")
     }
 ];
 

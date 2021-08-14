@@ -1,6 +1,6 @@
-# Moving Picture Potions
+# MPP
 
-  Moving Picture Potions allows the user to view random movie selections and adult beverages based on their choice of a movie genre. The user's last genre choice is presented to the user for easy retrieval.
+  description
 
   ---
 
@@ -21,11 +21,13 @@
 
 <a id="installation"></a>
 ## Installation Instructions
+install this way...
 
 ---
 
 <a id="usage"></a>
 ## Usage Information
+here is some usage information
 
 ---
 
@@ -37,14 +39,21 @@
 
 <a id="contributing"></a>
 ## Contribution Guidelines
+no contributions allowed...
 
 ---
 
 <a id="testing"></a>
 ## Test Instructions
+it's perfect, no need to test!
 
 ---
 
 <a id="contact"></a>
 ## Contact Me with Questions
+If you have any questions, you can contact me on GitHub:
+
+[bjackels5](https://github.com/bjackels5)
+
+Or you can reach me directly at bjackels5@gmail.com.
 
