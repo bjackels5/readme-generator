@@ -3,6 +3,33 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+const licenses = [
+    {
+        name: "MIT License",
+        badge: "url for MIT badge"
+    },
+    {
+        name: "GNU General Public License v3.0",
+        badge: "url for GNU badge"
+    },
+    {
+        name: "Mozilla Public License 2.0",
+        badge: "url for Mozilla badge"
+    },
+    {
+        name: "GNU Affero General Public License v3.0",
+        badge: "url for GNU Affero badge"
+    },
+    {
+        name: "The Unlicense",
+        badge: "url for GNU Affero badge"
+    },
+    {
+        name: "The Apache License 2.0",
+        badge: "url for Apache badge"
+    }
+];
+
 const validateInput = (str, message) => {
     if (str) {
         return true;
@@ -29,6 +56,19 @@ const questions = [
         name: 'description',
         message: 'Please provide a description of your project: (Required)',
         validate: theInput => validateInput(theInput, "A project description is required.")
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Choose which license your project uses:',
+        choices: [  "No License",
+                    "MIT",
+                    "GNU General Public",
+                    "Mozilla Public",
+                    "GNU Affero General Public",
+                    "The Unlicense",
+                    "The Apache"
+                ]
     },
     {
         type: 'input',
