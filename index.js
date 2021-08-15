@@ -3,33 +3,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-const licenses = [
-    {
-        name: "MIT License",
-        badge: "url for MIT badge"
-    },
-    {
-        name: "GNU General Public License v3.0",
-        badge: "url for GNU badge"
-    },
-    {
-        name: "Mozilla Public License 2.0",
-        badge: "url for Mozilla badge"
-    },
-    {
-        name: "GNU Affero General Public License v3.0",
-        badge: "url for GNU Affero badge"
-    },
-    {
-        name: "The Unlicense",
-        badge: "url for GNU Affero badge"
-    },
-    {
-        name: "The Apache License 2.0",
-        badge: "url for Apache badge"
-    }
-];
-
 const validateInput = (str, message) => {
     if (str) {
         return true;
@@ -42,9 +15,6 @@ const validateInput = (str, message) => {
 
 // TODO: Create an array of questions for user input
 const questions = [
-    /*
-    License
-    */
     {
         type: 'input',
         name: 'title',
@@ -102,12 +72,6 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'ghLink',
-        message: 'Provide the link to your GitHub user profile: (Required)',
-        validate: theInput => validateInput(theInput, "The link to your GitHub profile is required.")
-    },
-    {
-        type: 'input',
         name: 'emailAddress',
         message: 'What is your email address? (Required)',
         validate: theInput => validateInput(theInput, "Your email address is required.")
@@ -155,4 +119,3 @@ function init() {
 
 // Function call to initialize app
 init();
-

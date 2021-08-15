@@ -1,5 +1,3 @@
-const replaceSpaces = str => str.split(" ").join("%20");
-
 const licenseObjs = [
     {
         name: "MIT",
@@ -138,7 +136,7 @@ ${data.testing}
 ## Contact Me with Questions
 If you have any questions, you can contact me on GitHub:
 
-[${data.ghUserName}](${data.ghLink})
+https://github.com/${data.ghUserName}
 
 Or you can reach me directly at ${data.emailAddress}.
 
