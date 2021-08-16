@@ -1,5 +1,7 @@
 # README Generator
-This challenge for Module 9 of the Coding Bootcamp is to create a professional README file for a project based on user input received via command line interface.
+This challenge for Module 9 of the Coding Bootcamp is to create a professional README generator that prompts the user for input via a command line interface.
+
+---
 
 * [Requirements](#requirements)
 
@@ -33,6 +35,15 @@ This challenge for Module 9 of the Coding Bootcamp is to create a professional R
 * If a license is chosen, a badge for the license is added near the top of the README and a section is added that gives details on the license.
 
 ---
+<a id="techUsed"></a>
+
+## Technologies Used
+
+* Node
+* inquirer
+* fs
+
+---
 
 <a id="whatILearned"></a>
 
@@ -63,13 +74,9 @@ This challenge for Module 9 of the Coding Bootcamp is to create a professional R
 
 <a id="projectDemo"></a>
 
-![README Generator Demo](./media/bjackels5-module9-readme-generator-demo.mp4)
-
-
-
-
-
-<a href="./media/bjackels5-module9-readme-generator-demo.mp4" title="README Generator Demo"></a>
+<a href="https://youtu.be/TRyEJ-cYpcg">
+   <img src="./media/readme-generator-demo.png">
+</a>
 
 ---
 
