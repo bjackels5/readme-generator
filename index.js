@@ -80,7 +80,31 @@ const questions = [
 
 const promptProject = () => inquirer.prompt(questions);
 
+const writeToFile = (pathName, fileName, data) => {
+    if (!fs.existsSync(pathName))
+    {
+        fs.mkdirSync(pathName);
+    }
+    return new Promise((resolve, reject) => {
+        fs.writeFile(pathName + "/" + fileName, data, err => {
+            // if there's an error, reject the Promise and send the error to the Promise's .catch() method
+            if (err) {
+                reject(err);
+                // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+                return;
+            }
+
+            // if everything went well, resolve the Promise and send the successful data to the .then() method
+            resolve({
+                ok: true,
+                message: 'File Created!'
+            });
+        });
+    });
+};
+
 // TODO: Create a function to write README file
+/* original writeToFile function that does not create the diretory
 const writeToFile = (fileName, data) => {
     return new Promise((resolve, reject) => {
         fs.writeFile(fileName, data, err => {
@@ -99,6 +123,7 @@ const writeToFile = (fileName, data) => {
         });
     });
 };
+*/
 
 // TODO: Create a function to initialize app
 function init() {
@@ -107,7 +132,7 @@ function init() {
         return generateMarkdown(projectData);
     })
     .then(readmeMD => {
-        return writeToFile("./dist/README.md", readmeMD);
+        return writeToFile("./dist", "README.md", readmeMD);
     })
     .then(writeFileResponse => {
         console.log(writeFileResponse.message);
