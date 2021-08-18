@@ -11,6 +11,8 @@ This challenge for Module 9 of the Coding Bootcamp is to create a professional R
 
 * [README Generator Screenshot](#appScreenshot)
 
+* [Sample Generated README](#sampleOutput)
+
 * [README Generator Demo](#projectDemo)
 
 * [Contact Me](#contactMe)
@@ -67,6 +69,12 @@ This challenge for Module 9 of the Coding Bootcamp is to create a professional R
 <a id="appScreenshot"></a>
 
 ![README Generator](./media/readme-generator.png)
+
+---
+
+<a id="sampleOutput"></a>
+
+<a href="./dist/README.md">Sample Generated README</a>
 
 ---
 
